@@ -1,4 +1,4 @@
-import React, {  useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import './style.css';
 import axios from 'axios';
 import Card from './Card';
@@ -16,7 +16,7 @@ const setMovieReducer = (movie, action) => {
       console.log("data saved")
       return { ...movie, seats: action.payload, };
     case 'movie_detail':
-      return {...movie};
+      return { ...movie };
     default:
       throw new Error();
   }
@@ -25,7 +25,7 @@ const ACTION = {
   SET_TITLE: 'set_title',
   SET_SLOT: 'set_slot',
   SET_SEAT: 'set_seats',
-  MOVIE_DETAIL:'movie_detail'
+  MOVIE_DETAIL: 'movie_detail'
 }
 
 function CreateBooking() {
@@ -64,7 +64,7 @@ function CreateBooking() {
     }
     if (prevSeat) {
       console.log("recieved  from local ", JSON.parse(prevSeat));
-      dispatch({ type: ACTION.SET_SEAT, payload: JSON.parse(prevSeat) }) 
+      dispatch({ type: ACTION.SET_SEAT, payload: JSON.parse(prevSeat) })
     }
     const lastTitle = document.getElementById(localStorage.getItem('title'));
     if (lastTitle) lastTitle.className = "active"
@@ -94,21 +94,16 @@ function CreateBooking() {
  =-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=*/
 
   const postData = (data) => {
-    
-    const res = 
-<<<<<<< HEAD
-    //  axios.post('http://localhost:8080/api/booking',
-    // // axios.post('https://deploymovieticket.onrender.com',
-=======  
-    // axios.post('http://localhost:8080/api/booking',
-    axios.post('https://deploymovieticket.onrender.com/api/booking',
->>>>>>> 3b25ba481f97ca15c74003db2c52d1a0a9f0ad6c
-     data, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      }
-    })
+
+    const res =
+      //  axios.post('http://localhost:8080/api/booking', 
+      axios.post('https://deploymovieticket.onrender.com/api/booking',
+        data, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        }
+      })
     return res
   }
 
@@ -197,7 +192,7 @@ function CreateBooking() {
   //       }
   //     }
   //   }
-    
+
   // }
 
   // useEffect(() => {
@@ -214,13 +209,13 @@ function CreateBooking() {
     const updatedSeats = { ...movie.seats, [e.target.id]: Number(e.target.value) };
     dispatch({ type: ACTION.SET_SEAT, payload: updatedSeats });
     e.target.className = "active";
-  
-  
+
+
     // Update localStorage directly
     localStorage.setItem('seat', JSON.stringify(updatedSeats));
   }
-  
-  
+
+
   useEffect(() => {
     const localTitle = localStorage.getItem('title')
     const localSlot = localStorage.getItem('slot')
@@ -237,14 +232,14 @@ function CreateBooking() {
     }
     const lastTitle = document.getElementById(localTitle);
     if (lastTitle) lastTitle.className = "active"
-  
-  
+
+
     const lastSlot = document.getElementById(localSlot);
     if (lastSlot) lastSlot.className = "active"
-  
-  
-  
-  
+
+
+
+
     if (prevSeat) {
       const seatObject = JSON.parse(prevSeat)
       for (const key in seatObject) {
