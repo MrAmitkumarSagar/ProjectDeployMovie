@@ -13,7 +13,11 @@ function ShowBooking(props) {
  =-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=*/
   const [movieList, setmovieList] = useState([]);
   const getData = () => {
-    axios.get('http://localhost:8080/api/booking').then((res) => {
+<<<<<<< HEAD
+    // axios.get('http://localhost:8080/api/booking').then((res) => {
+// =======
+    axios.get('https://deploymovieticket.onrender.com/api/booking').then((res) => {
+>>>>>>> 3b25ba481f97ca15c74003db2c52d1a0a9f0ad6c
       setmovieList((res.data));
     })
 
@@ -27,7 +31,15 @@ function ShowBooking(props) {
       <div style={{ borderBottom: "3px dotted black", marginBottom: '5px' }}>All  Booked movie will be here</div>
       <div id = 'MovieCardParent' style={{  display:'flex' ,flexDirection:'column-reverse' }}>
         {
+<<<<<<< HEAD
           movieList.length!==0? <MovieCard movie={movieList[movieList.length-1]} />:<div>" NO MOVIE DETAILS FOUND..."</div>   }
+=======
+           movieList.length!==0? <MovieCard movie={movieList[movieList.length-1]} />:<div>" NO MOVIE DETAILS FOUND..."</div>   }
+{/*           movieList.length!==0?(movieList.map((val) =>
+        <MovieCard key={val._id} movie={val} />
+      )):<div>" NO MOVIE DETAILS FOUND..."</div> */}
+      }
+>>>>>>> 3b25ba481f97ca15c74003db2c52d1a0a9f0ad6c
       </div>
    </div>
   )
