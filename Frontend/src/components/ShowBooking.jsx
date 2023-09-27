@@ -27,9 +27,10 @@ function ShowBooking(props) {
       <div style={{ borderBottom: "3px dotted black", marginBottom: '5px' }}>All  Booked movie will be here</div>
       <div id = 'MovieCardParent' style={{  display:'flex' ,flexDirection:'column-reverse' }}>
         {
-          movieList.length!==0?(movieList.map((val) =>
+           movieList.length!==0? <MovieCard movie={movieList[movieList.length-1]} />:<div>" NO MOVIE DETAILS FOUND..."</div>   }
+{/*           movieList.length!==0?(movieList.map((val) =>
         <MovieCard key={val._id} movie={val} />
-      )):<div>" NO MOVIE DETAILS FOUND..."</div>
+      )):<div>" NO MOVIE DETAILS FOUND..."</div> */}
       }
       </div>
    </div>
