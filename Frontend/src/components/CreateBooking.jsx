@@ -97,7 +97,7 @@ function CreateBooking() {
     
     const res = 
     // axios.post('http://localhost:8080/api/booking',
-    axios.post('https://deploymovieticket.onrender.com',
+    axios.post('https://deploymovieticket.onrender.com/api/booking',
      data, {
       headers: {
         Accept: "application/json",
