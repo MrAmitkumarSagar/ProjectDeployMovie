@@ -13,7 +13,7 @@ function ShowBooking(props) {
  =-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=*/
   const [movieList, setmovieList] = useState([]);
   const getData = () => {
-    axios.get('https://deploymovieticket.onrender.com').then((res) => {
+    axios.get('https://deploymovieticket.onrender.com/api/booking').then((res) => {
       setmovieList((res.data));
     })
 
