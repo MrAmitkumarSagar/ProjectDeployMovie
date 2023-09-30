@@ -26,7 +26,7 @@ Know More -
 <pre>
 BookMovieTicket +
 |                
-+--- Client 
++--- Frontend 
 |         | 
 |         +---Node Module
 |         +---PubLic
@@ -51,13 +51,16 @@ BookMovieTicket +
 |         +---package.json
 |         +---package-lock.json
 |
-+---Node Module
-+---.gitattributes
-+---connectore.js
-+---index.js
-+---package-lock.json
-+---package.json
-+---README.md
+|
++--Backend
+|         |
+|         +--Node Module
+|         +--.gitattributes
+|         +--connectore.js
+|         +--index.js
+|         +--package-lock.json
+|         +--package.json
+|         +--README.md
 +---schema.js
 
 </pre>
