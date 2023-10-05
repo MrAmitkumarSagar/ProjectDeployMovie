@@ -89,6 +89,20 @@ Nodemon is tool used for auto starting the web server Nodemon is watches for the
 Express is middleware and librarry for server creation and fatching data from or to End points
 
 
+# API Documentation
+The API related to this project is  on this URL https://deploymovieticket.onrender.com 
+there is only two mathod is working on single EndPoint which is /api/booking
+these two mathod are GET and POST 
+The Get mathod is on this endpoint fetch the data from the Database and send the response in the form
+###  Response of Get mathod
+the response int form of array of json
+     [{\ "seats":{"A1":0,"A2":3,"A3":0,"A4":0,"D1":0,"D2":0}, "_id":"65129274838750d211a1aafe","movie":"Suraj par mangal bhari", "slot":"10:00 AM","__v":0 }...\]
+
+### Post mathod of API
+the post mathod recieve the request in the form
+      [{ "seats":{"A1":0,"A2":3,"A3":0,"A4":0,"D1":0,"D2":0},"movie":"Suraj par mangal bhari", "slot":"10:00 AM",} ]
+  and return in the same as above format
+     
 
 \
 \
